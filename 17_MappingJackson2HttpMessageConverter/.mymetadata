@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="17_MappingJackson2HttpMessageConverter"
+  id="myeclipse.1355542951125"
+  context-root="/34"
+  j2ee-spec="6.0"
+  archive="17_MappingJackson2HttpMessageConverter.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

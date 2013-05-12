@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="13_@SessionAttributes"
+  id="myeclipse.1342059348306"
+  context-root="/13"
+  j2ee-spec="6.0"
+  archive="13_@SessionAttributes.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

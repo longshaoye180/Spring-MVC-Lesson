@@ -1,0 +1,40 @@
+20.9.2.1 StringHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write Strings from the HTTP request and response. 
+By default, this converter supports all text media types (text/*), and writes with a Content-Type of text/plain.
+
+20.9.2.2 FormHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write form data from the HTTP request and response. 
+By default, this converter reads and writes the media type application/x-www-form-urlencoded. 
+Form data is read from and written into a MultiValueMap<String, String>.
+
+20.9.2.3 ByteArrayHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write byte arrays from the HTTP request and response. 
+By default, this converter supports all media types (*/*), and writes with a Content-Type of application/octet-stream. 
+This can be overridden by setting the supportedMediaTypes property, and overriding getContentType(byte[]).
+
+20.9.2.4 MarshallingHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write XML using Spring's Marshaller and 
+Unmarshaller abstractions from the org.springframework.oxm package. This converter requires a Marshaller and Unmarshaller 
+before it can be used. These can be injected via constructor or bean properties. 
+By default this converter supports (text/xml) and (application/xml).
+
+20.9.2.5 MappingJacksonHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write JSON using Jackson's ObjectMapper. 
+JSON mapping can be customized as needed through the use of Jackson's provided annotations.
+ When further control is needed, a custom ObjectMapper can be injected through the ObjectMapper property for cases
+  where custom JSON serializers/deserializers need to be provided for specific types.
+ By default this converter supports (application/json).
+
+20.9.2.6 SourceHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write javax.xml.transform.Source from the HTTP request and response. Only DOMSource, SAXSource, and StreamSource are supported. By default, this converter supports (text/xml) and (application/xml).
+
+20.9.2.7 BufferedImageHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write java.awt.image.BufferedImage 
+from the HTTP request and response. This converter reads and writes the media type supported by the Java I/O API.

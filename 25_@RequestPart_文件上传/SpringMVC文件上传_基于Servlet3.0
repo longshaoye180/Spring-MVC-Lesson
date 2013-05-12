@@ -1,0 +1,7 @@
+
+1:因为基于Servlet3.0,所有DispatcherServlet必需在web.xml中配置multipart-config参数,或@MultipartConfig注解
+
+2:	文件上传必需配置 multipartResolver
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	</bean>

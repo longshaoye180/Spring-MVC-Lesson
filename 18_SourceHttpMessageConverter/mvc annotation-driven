@@ -1,0 +1,39 @@
+Spring 3.1 introduced a new set of support classes for @RequestMapping methods called RequestMappingHandlerMapping and RequestMappingHandlerAdapter respectively. They are recommended for use and even required to take advantage of new features in Spring MVC 3.1 and going forward. The new support classes are enabled by default by the MVC namespace and MVC Java config (@EnableWebMvc) but must be configured explicitly if using neither. This section describes a few important differences between the old and the new support classes.
+
+
+被打开后,MVC会自动配置默认的RequestMappingHandlerMapping,RequestMappingHandlerAdapter 和7个MessageConverter 和 ConversionService -->
+
+getMessageConverts()方法来获取转换器的一个
+集合 List<HttpMessageConverter>
+ 
+默认给RequestMappingHandlerAdapter初始化的有(当然我们也可以添加自定义的converter)
+ 
+Spring 3 style type conversion through a ConversionService instance in addition to the JavaBeans PropertyEditors used for Data Binding.
+
+Support for formatting Number fields using the @NumberFormat annotation through the ConversionService.
+
+Support for formatting Date, Calendar, Long, and Joda Time fields using the @DateTimeFormat annotation, if Joda Time 1.3 or higher is present on the classpath.
+
+Support for validating @Controller inputs with @Valid, if a JSR-303 Provider is present on the classpath.
+
+HttpMessageConverter support for @RequestBody method parameters and @ResponseBody method return values from @RequestMapping or @ExceptionHandler methods.
+
+This is the complete list of HttpMessageConverters set up by mvc:annotation-driven:
+
+ByteArrayHttpMessageConverter converts byte arrays.
+
+StringHttpMessageConverter converts strings.
+
+ResourceHttpMessageConverter converts to/from org.springframework.core.io.Resource for all media types.
+
+SourceHttpMessageConverter converts to/from a javax.xml.transform.Source.
+
+FormHttpMessageConverter converts form data to/from a MultiValueMap<String, String>.
+
+Jaxb2RootElementHttpMessageConverter converts Java objects to/from XML — added if JAXB2 is present on the classpath.
+
+MappingJacksonHttpMessageConverter converts to/from JSON — added if Jackson is present on the classpath.
+
+AtomFeedHttpMessageConverter converts Atom feeds — added if Rome is present on the classpath.
+
+RssChannelHttpMessageConverter converts RSS feeds — added if Rome is present on the classpath.

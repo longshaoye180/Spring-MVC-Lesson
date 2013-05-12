@@ -1,0 +1,7 @@
+20.9.2.5 MappingJacksonHttpMessageConverter
+
+An HttpMessageConverter implementation that can read and write JSON using Jackson's ObjectMapper. 
+JSON mapping can be customized as needed through the use of Jackson's provided annotations.
+ When further control is needed, a custom ObjectMapper can be injected through the ObjectMapper property for cases
+  where custom JSON serializers/deserializers need to be provided for specific types.
+ By default this converter supports (application/json).
